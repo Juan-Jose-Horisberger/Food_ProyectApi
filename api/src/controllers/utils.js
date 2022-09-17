@@ -10,7 +10,7 @@ const dbLoader = async () => {
         if (api) {
             const apiInfo = api.data.results?.map(e => {
                 return {
-                    id: e.id, //Quitar este id ya que lo generamos solo desde el db
+                    //id: e.id, //Quitar este id ya que lo generamos solo desde el db
                     name: e.title,
                     summary: e.summary.replace(/<[^>]*>?/gm, ""),
                     healthScore: e.healthScore,
@@ -18,7 +18,7 @@ const dbLoader = async () => {
                         ? e.analyzedInstructions.map(a => a.steps.map((b, i) => `${i + 1}. ${b.step}.`)).flat()
                         : "",
                     image: e.image,
-                    dietsApi: e.diets
+                    dietsApi: e.diets ? e.diets : "Esta receta no tiene dietas asociadas"
                 }
             })
 

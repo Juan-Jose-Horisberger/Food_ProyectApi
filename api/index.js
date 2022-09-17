@@ -24,7 +24,7 @@ const { dbLoader, dbLoaderDiets } = require('./src/controllers/utils');
 // const diets_List = require('./src/controllers/Diets_list');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   dbLoaderDiets();
   dbLoader();
 

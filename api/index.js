@@ -28,7 +28,8 @@ conn.sync({ force: false }).then(() => {
   dbLoaderDiets();
   dbLoader();
 
-  server.listen(process.env.PORT, () => {
+  const PORT = process.env.PORT;
+  server.listen(PORT, () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
 

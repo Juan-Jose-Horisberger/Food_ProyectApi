@@ -10,7 +10,7 @@ const dbLoader = async () => {
         if (api) {
             const apiInfo = api.data.results?.map(e => {
                 return {
-                    //id: e.id, //Quitar este id ya que lo generamos solo desde el db
+                    id: e.id, //Quitar este id ya que lo generamos solo desde el db
                     name: e.title,
                     summary: e.summary.replace(/<[^>]*>?/gm, ""),
                     healthScore: e.healthScore,
